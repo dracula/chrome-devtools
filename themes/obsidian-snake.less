@@ -1,100 +1,94 @@
-//************************************************************************/
-/* Zero Dark Matrix by Maurice Cruz [@mauricecruz]                       */
-/*************************************************************************/
+//***************************************************************************************************************************/
+/* Obsidian Snake by Charles Ahmadzadeh (@superzadeh), based on Obsidian (https://github.com/mekwall/obsidian-color-scheme) */
+/****************************************************************************************************************************/
 
 @theme-type: dark;
 
 // Global Settings
 @text-height      : 14px;
-@global-accent    : #89f5a2;
+@global-accent    : #54799E;
 @global-arrow     : #8c8c8c;
-@global-background: #222;
+@global-background: #22282A;
 @global-boxshadow : rgba(17,17,17,.6);
 @global-divider   : lighten(@global-background, 5%);
 @global-hover     : lighten(@global-background, 5%);
 @global-input     : #111;
 @global-selected  : #364c3b;
 @global-text      : #ccc;
-@global-toolbar   : #444;
 @global-label     : #626262;
 @global-warn      : #db0;
 @global-error     : #ff5a5a;
-@global-link      : #e3b959;
 @global-textshadow: darken(@global-background, 4%);
 
 // JavaScript
-@js-atom      : #89f5a2;
+@js-atom      : #93C763;
 @js-attribute : #4e87bf;
-@js-builtin   : #8da6ce;
+@js-builtin   : #8CBBAD;
 @js-comment   : #676767;
-@js-def       : #49a6d2;
+@js-def       : #7CCADD;
 @js-error     : #9D1E15;
 @js-header    : #ff6400;
 @js-hr        : #aeaeae;
-@js-keyword   : #8b6ccf;
-@js-link      : #8da6ce;
+@js-keyword   : #93C763;
+@js-link      : #8CBBAD;
 @js-meta      : #d8fa3c;
-@js-number    : #89f5a2;
-@js-operator  : #cdb943;
-@js-property  : #cdb943;
-@js-string    : #f07b3c;
+@js-number    : #FFCD22;
+@js-operator  : #E8E2B7;
+@js-property  : #F0F0F0;
+@js-string    : #EC7600;
 @js-tag       : #49a6d2;
-@js-variable  : #ccc;
-@js-variable-2: #ccc;
+@js-variable  : #678CB1;
+@js-variable-2: #678CB1;
 
 // JavaScript Objects
 @js-obj-array    : #7c7c7c;
-@js-obj-boolean  : #89f5a2;
+@js-obj-boolean  : #93C763;
 @js-obj-function : #8b6ccf;
 @js-obj-name     : #77a8c6;
-@js-obj-number   : #89f5a2;
+@js-obj-number   : #93C763;
 @js-obj-preview  : #ddd;
-@js-obj-regexp   : #ff54e8;
-@js-obj-string   : #ff8737;
+@js-obj-regexp   : #D39745;
+@js-obj-string   : #d97640;
 @js-obj-undefined: #ad4e4e;
 
 // CSS
 @css-at-rule   : #b094bb;
-@css-atom      : #ccc;
-@css-builtin   : #ff9635;
+@css-atom      : #EC7600;
+@css-builtin   : #93C763;
 @css-comment   : #676767;
-@css-def       : #ff9635;
+@css-def       : #93C763;
 @css-important : #f00;
-@css-meta      : #6aedff;
-@css-number    : #ccc;
-@css-operator  : #ccc;
-@css-property  : #6aedff;
-@css-qualifier : #ff9635;
+@css-meta      : #9898BC;
+@css-number    : #F0F0F0;
+@css-operator  : #F0F0F0;
+@css-property  : #668BB0;
+@css-qualifier : #93C763;
 @css-string    : #e3b959;
-@css-string-2  : #ccc;
-@css-tag       : #ff9635;
-@css-variable  : #ff9635;
-@css-variable-2: #ff9635;
+@css-string-2  : #F0F0F0;
+@css-tag       : #93C763;
+@css-variable  : #93C763;
+@css-variable-2: #93C763;
 
 // HTML Highlighting
-@xml-attribute         : #88aed5;
-@xml-comment           : #7c7c7c;
+@xml-attribute         : #B3B689;
+@xml-comment           : #66747B;
 @xml-error             : #bf4c4c;
 @xml-iframe-root       : #db0;
 @xml-js-node           : #c2c3c3;
-@xml-link              : #e3b959;
+@xml-link              : #FFCD22;
 @xml-pseudo            : #49a5d2;
 @xml-pseudo-highlighted: #a6371a;
 @xml-shadow-root       : #db0;
-@xml-string            : #f0874f;
-@xml-tag               : #49a6d2;
+@xml-string            : #EC7600;
+@xml-tag               : #8CBBAD;
 
 // Tabbed Header Configuration
-@toolbar-main         : @global-toolbar;
-@toolbar-sub          : darken(@global-toolbar, 5%);
-@toolbar-divider      : darken(@toolbar-sub, 2%);
-@toolbar-item-divider : darken(@tab-label, 5%);
-@tab-color-top        : lighten(@global-background, 18%);
-@tab-color-bottom     : lighten(@global-background, 8%);
-@tab-highlighted      : @global-accent;
-@tab-label            : #999;
-@tab-label-selected   : #f8f8f8;
-@tab-label-unsaved    : #db0;
+@tab-color-top      : lighten(@global-background, 18%);
+@tab-color-bottom   : lighten(@global-background, 8%);
+@tab-highlighted    : @global-accent;
+@tab-label          : #999;
+@tab-label-selected : #f8f8f8;
+@tab-label-unsaved  : #db0;
 
 // Toolbars
 @tab-main-icons-padding : 6px;
@@ -105,7 +99,6 @@
 // Glyphs
 @glyph-active  : @global-accent;
 @glyph-inactive: lighten(@global-background, 35%);
-@glyph-hover: lighten(@global-background, 45%);
 
 // Crumbs
 @crumb-selected-background: @global-selected;
@@ -148,7 +141,6 @@
 
 // Elements Sidebar
 @style-edit-mode-selector-text: #999;
-@style-section                : lighten(@global-background, 15%);
 @style-selector-text          : #ccc;
 @style-separator              : lighten(@global-background, 10%);
 @style-value                  : #ccc;
@@ -234,8 +226,6 @@
 @timeline-graph-selection     : @global-accent;
 @timeline-progress-pane       : fade(lighten(@global-background,30%), 50%);
 @timeline-resources-divider   : lighten(@global-background, 3%);
-
-
 
 // Popovers
 @popover-background       : lighten(@global-background, 5%);

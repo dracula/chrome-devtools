@@ -153,6 +153,7 @@ body.dock-to-right:not(.undocked):not(.overlay-contents) {
 			& { background-color: @- !important; .contrast(@popover-background, 8%); }
 			& { border-top: 1px solid @- !important; .contrast(@popover-background, 10%); }
 			& { border-bottom: 1px solid @- !important; .contrast(@popover-background, 10%); }
+			background-image: none !important;
 		}
 
 		.soft-context-menu-separator > .separator-line {
@@ -197,4 +198,15 @@ body.dock-to-right:not(.undocked):not(.overlay-contents) {
 	[is="text-button"] {
 		.button-styles();
 	}
+}
+
+::shadow ::shadow ::shadow {
+	.text-button,
+	[is="text-button"] {
+		.button-styles();
+	}
+}
+
+::shadow ol.children.shadow-root.shadow-root-depth-3.expanded {
+	border-left: 1px dashed @- !important; .contrast(@global-background, 5%);
 }

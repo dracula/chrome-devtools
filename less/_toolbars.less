@@ -5,7 +5,7 @@
 ::shadow {
 
 	.tabbed-pane-header {
-		background-image: linear-gradient(@tab-color-top, @tab-color-bottom) !important;
+		background: @toolbar-main;
 		box-shadow: inset 0 1px 0 @-; .contrast(@tab-color-top,7%);
 		border-bottom: 1px solid @global-background !important;
 		border: none;
@@ -64,8 +64,6 @@
 		opacity: 0.5 !important;
 	}
 
-
-
 	// sidebar borders
 	.shadow-split-view.hbox.shadow-split-view-first-is-sidebar > .shadow-split-view-sidebar:not(.maximized) {
 		border-right: 2px solid @global-divider !important;
@@ -80,7 +78,6 @@
 	}
 
 } //::shadow
-
 
 // Adjust the height of the main navigation
 .inspector-view-tabbed-pane.tabbed-pane::shadow {
@@ -101,18 +98,6 @@
 	}
 }
 
-// First 2 selectors are override specific for mac because a background-image is set
-body.undocked.platform-mac.inactive .inspector-view-tabbed-pane.tabbed-pane::shadow,
-body.undocked.platform-mac .inspector-view-tabbed-pane.tabbed-pane::shadow,
-body.platform-mac.inactive .inspector-view-tabbed-pane.tabbed-pane::shadow,
-body.platform-mac .inspector-view-tabbed-pane.tabbed-pane::shadow,
-body .inspector-view-tabbed-pane.tabbed-pane::shadow {
-
-	.tabbed-pane-header {
-		background-image: linear-gradient(@tab-color-top, @tab-color-bottom) !important;
-	}
-}
-
 // isolate just the status bar and not the toolbar left/right components
 .panel .status-bar::shadow .status-bar-shadow {
 	background: -webkit-linear-gradient(@tab-color-top, @tab-color-bottom) !important;
@@ -127,9 +112,7 @@ select.tabbed-pane-header-tabs-drop-down-select{
 
 // Main Toolbar
 .toolbar {
-
 	.tabbed-pane-header {
-
 		.tabbed-pane-header-tab {
 			height: @tab-main-toolbar-height !important;
 			line-height: (.75*@tab-main-toolbar-height) !important;
@@ -141,7 +124,6 @@ select.tabbed-pane-header-tabs-drop-down-select{
 		.tabbed-pane-header-tabs-drop-down {
 			line-height: (0.9*@tab-main-toolbar-height);
 		}
-
 	}
 
 	.toolbar-controls-left,
@@ -206,27 +188,12 @@ select.tabbed-pane-header-tabs-drop-down-select{
 		color: @filter-selected-text !important;
 		background: @filter-selected !important;
 
-
 		//custom colors
-		&.error {
-			background: @filter-error !important;
-		}
-
-		&.warning{
-			background: @filter-warning !important;
-		}
-
-		&.info{
-			background: @filter-info !important;
-		}
-
-		&.log{
-			background: @filter-log !important;
-		}
-
-		&.debug{
-			background: @filter-debug !important;
-		}
+		&.error { background: @filter-error !important; }
+		&.warning { background: @filter-warning !important; }
+		&.info { background: @filter-info !important; }
+		&.log { background: @filter-log !important; }
+		&.debug { background: @filter-debug !important; }
 	}
 }
 
@@ -262,11 +229,9 @@ select.tabbed-pane-header-tabs-drop-down-select{
 	color: @global-accent !important;
 }
 
-
 body .inspector-view-toolbar.toolbar::shadow .toolbar-button-theme {
 	background-color: @glyph-inactive !important;
 }
-
 
 //adjust toolbar glyph positions
 .inspector-view-toolbar-left,
@@ -274,13 +239,13 @@ body .inspector-view-toolbar.toolbar::shadow .toolbar-button-theme {
 	margin-top: 7px !important;
 }
 
-// only put gradient background on specific subtoolbars
-.console-view,
-.network,
-.timeline {
-	.toolbar {
-		background: -webkit-linear-gradient(@tab-color-top, @tab-color-bottom) !important;
-	}
+// Subtoolbars
+.console-view .toolbar,
+.network .toolbar,
+.timeline .toolbar,
+.filter-bar {
+	background: @toolbar-sub !important;
+	border-bottom: 1px solid @toolbar-divider !important;
 }
 
 ::shadow {
@@ -351,19 +316,7 @@ body .inspector-view-toolbar.status-bar::shadow .status-bar-item {
 	}
 }
 
-// add padding to console subtoolbar (filters)
-.filter-bar.hbox {
-	padding: 2px 0;
-}
-
-// fat filter bar
-.filter-bar {
-	background-color: @filter-background !important;
-	border-bottom: 1px solid @- !important ; .contrast(@global-divider, 5%);
-}
-
 ::shadow {
-
 	.tabbed-pane-tab-slider {
 		background-color: @tab-highlighted !important;
 		bottom: 0 !important;
@@ -374,19 +327,9 @@ body .inspector-view-toolbar.status-bar::shadow .status-bar-item {
 		color: @tab-label !important;
 	}
 
-	.toolbar-divider {
-		background-color: @glyph-inactive !important;
-	}
-}
-
-// toolbar borders
-.console-view > .toolbar,
-.panel.network > .toolbar {
-	border-bottom: 1px solid @global-divider !important;
 }
 
 // footer statusbar text
-
 ::shadow .toolbar-item {
 	color: @global-text !important;
 }
@@ -401,4 +344,71 @@ body .inspector-view-toolbar.status-bar::shadow .status-bar-item {
 // Network filter when a filter is applied but options are hidden
 ::shadow .toolbar-item.toggled-active .glyph {
 	background-color: @global-accent !important;
+}
+
+
+// Drag-drop toolbars
+.inspector-view-tabbed-pane::shadow .tabbed-pane-header-contents {
+	.tabbed-pane-header-tab.selected,
+	.tabbed-pane-header-tab {
+		border-top: none !important;
+	}
+}
+
+::shadow .tabbed-pane-tab-slider {
+	//remove top border
+	border-top: none !important;
+}
+
+::shadow .tabbed-pane-header-tab,
+::shadow .tabbed-pane-header-tab.selected {
+	background: none !important;
+}
+
+::shadow .toolbar-divider {
+	background-color: @toolbar-divider !important;
+}
+
+// glyph
+::shadow {
+	// off
+	.toolbar-glyph {
+		background-color: @glyph-inactive !important;
+	}
+
+	// hover
+	.toolbar-button:enabled.hover:not(:active) .toolbar-glyph {
+		background-color: @glyph-hover !important;
+	}
+
+	// on
+	.toolbar-state-on.toolbar-button:enabled:not(:active) .toolbar-glyph,
+	.toolbar-button.toolbar-state-on .toolbar-glyph {
+		background-color: @glyph-active !important;
+	}
+
+	//override for v49
+	.toolbar-state-on .record-toolbar-item.toolbar-glyph,
+	.toolbar-state-active .filter-toolbar-item.toolbar-glyph,
+	.toolbar-state-active .block-toolbar-item.toolbar-glyph {
+		background-color: @glyph-inactive !important;
+	}
+}
+
+// hover states for toolbar menu icons
+::shadow ::shadow {
+	.toolbar-button:enabled.hover:not(:active) .toolbar-glyph,
+	.toolbar-button:enabled.hover:not(:active) .toolbar-dropdown-arrow,
+	.toolbar-button.toolbar-state-on .toolbar-glyph,
+	.-theme-selection-color {
+		background-color: @global-accent !important;
+	}
+
+	.toolbar-blue-on-hover .toolbar-button:not(.toolbar-state-on):enabled.hover:not(:active) {
+		border: 1px solid @global-accent !important;
+	}
+}
+
+::shadow .toolbar-shadow .toolbar-text {
+	color: @global-label !important;
 }

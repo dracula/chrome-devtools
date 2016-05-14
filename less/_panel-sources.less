@@ -17,6 +17,13 @@
 	background-color: @global-background !important;
 }
 
+// Debugger Controls Toolbar
+.scripts-debug-toolbar {
+	background: @toolbar-main !important;
+	box-shadow: inset 0 1px 0 @-; .contrast(@toolbar-main,7%);
+	border-bottom: 1px solid @global-background !important;
+}
+
 .sidebar-pane {
 
 	/* Breakpoints/Dom Breakpoints */
@@ -26,7 +33,7 @@
 	}
 
 	.breakpoint-list li {
-		color: @global-accent !important;
+		color: @global-text !important;
 		& { border-top: 1px solid @- !important; .contrast(@global-background, 7%) !important };
 		& { border-bottom: 1px solid @- !important; .contrast(@global-background, 7%, invert) !important };
 
@@ -86,12 +93,21 @@
 	opacity: .3 !important;
 }
 
-/*Pane Headers*/
+// Sidebar Pane Headers
 .sidebar-pane-title {
-	background-image: -webkit-linear-gradient(@tab-color-top, @tab-color-bottom) !important;
-	color: @global-text;
-	& { border-top: 1px solid @- !important; .contrast(@tab-color-top, 7%) };
-	& { border-bottom: 1px solid @- !important; .contrast(@tab-color-bottom, 10%, invert) };
+	color: @global-text !important;
+	background: @toolbar-main !important;
+	& { border-top: 1px solid @- !important; .contrast(@toolbar-main, 5%); }
+	& { border-bottom: 1px solid @- !important; .contrast(@toolbar-main, 5%, invert); }
+
+	&.expanded,
+	&:last-child {
+		border-bottom: 1px solid @toolbar-main !important;
+	}
+
+	&:first-child {
+		border-top: 1px solid red !important;
+	}
 }
 
 .sidebar-pane-stack > .sidebar-pane.visible:nth-last-of-type(1){
@@ -261,7 +277,7 @@ li.breakpoint-hit .breakpoint-hit-marker {
 }
 
 // Notification bar (for mismatch/blackbox notices)
-.source-frame-infobar::shadow {
+::shadow {
 	.infobar {
 		& {border-bottom: 2px solid @- !important; .contrast(@global-background, 10%);}
 		& {background-color: @- !important; .contrast(@global-background, 5%);}
@@ -306,7 +322,7 @@ body .CodeMirror .CodeMirror-selectedtext:not(.CodeMirror-persist-highlight) {
 
 // [panel-sources] Hidden stack frames notification (sidebar)
 .hidden-callframes-message {
-	background: @-; .contrast(@global-background, 5%);
+	background: @-; .contrast(@global-background, 5%) !important;
 	text-align: center;
 
 	.link {
@@ -344,4 +360,28 @@ body .CodeMirror .CodeMirror-selectedtext:not(.CodeMirror-persist-highlight) {
 // Buttons on panel headers
 .sidebar-pane-toolbar .pane-title-button {
 	background-color: @- !important; .contrast(@glyph-inactive, 50%);
+}
+
+
+// ==========================================================================
+// Sources Tree Navigation
+// ==========================================================================
+
+// remove bg from selected menu item
+::shadow .tree-outline li {
+	background-color: rgba(0,0,0,0) !important;
+}
+
+// ==========================================================================
+// Sources Info Bar
+// ==========================================================================
+
+::shadow .infobar-info {
+	background-color: @toolbar-sub !important;
+	border-bottom: 1px solid @toolbar-divider !important;
+	color: @global-text !important;
+
+	.infobar-toggle {
+		color: @global-link !important;
+	}
 }
