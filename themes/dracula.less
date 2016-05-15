@@ -1,7 +1,15 @@
-//************************************************************************/
-/* Zero Dark Matrix by Maurice Cruz [@mauricecruz]                       */
-/*************************************************************************/
-
+/* Dracula Theme v1.2.0
+ *
+ * https://github.com/zenorocha/dracula-theme
+ *
+ * Copyright 2015, All rights reserved
+ *
+ * Code licensed under the MIT license
+ * http://zenorocha.mit-license.org
+ *
+ * @author Zeno Rocha <hi@zenorocha.com>
+ * @author Jack Saunders <hi@zenorocha.com>
+ */
 @theme-type: dark;
 
 
@@ -108,6 +116,8 @@
 @tab-label-unsaved  : @drac-yellow;
 
 // Toolbars
+@toolbar-main: @global-background;
+@toolbar-sub: @global-background;
 @tab-main-icons-padding : 6px;
 @tab-main-toolbar-height: 34px;
 @tab-sub-icons-padding : 0;
@@ -247,7 +257,7 @@
 
 
 // Popovers
-@popover-background       : lighten(@global-background, 5%);
+@popover-background       : @global-background;
 @popover-details-row-title: @drac-cyan;
 @popover-details-title    : @drac-yellow;
 @popover-title            : @drac-pink;
