@@ -1,9 +1,9 @@
 {
 	"name": "DevTools Theme: Dracula",
 	"version": "1.0",
-	"description": "A highly customized dark theme for Devtools.",
+	"description": "😱 A dark theme for Chrome DevTools",
 	"devtools_page": "devtools.html",
-	"homepage_url": "https://github.com/mauricecruz/chrome-devtools-zerodarkmatrix-theme",
+	"homepage_url": "https://github.com:dracula/chrome-devtools.git",
 	"manifest_version": 2,
 	"icons": {
 		"16": "images/icon16.png",
