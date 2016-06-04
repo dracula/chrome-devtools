@@ -8,6 +8,14 @@
 
 All instructions can be found at [draculatheme.com/chrome](https://draculatheme.com/chrome).
 
+## Team
+
+This theme is maintained by the following person(s) and a bunch of [awesome contributors](https://github.com/dracula/chrome-devtools/graphs/contributors).
+
+[![Jack Saunders](https://avatars1.githubusercontent.com/u/1415692?v=3&s=70)](https://github.com/jacksaunders) |
+--- | ---
+[Jack Saunders](https://github.com/jacksaunders) |
+
 ## License
 
 [MIT License](./LICENSE)
