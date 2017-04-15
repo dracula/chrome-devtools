@@ -3,26 +3,25 @@
 // ==========================================================================
 
 .arrow-styles() {
+	.glyphs("Images/toolbarButtonGlyphs");
+
 	background-color: @global-arrow !important;
 	background-image: none !important;
-	-webkit-mask-image: url(Images/toolbarButtonGlyphs.png) !important;
 	-webkit-mask-repeat: no-repeat !important;
 	color: rgba(0,0,0,0) !important;
 	opacity: 1 !important;
-	.arrow-animations();
 }
 
 // Generates the styles for arrows. Defaults to the most commonly used selectors
 .arrow-mixin(@arrow-right: ~'li.parent::before', @arrow-down: ~'li.parent.expanded::before') {
-	@{arrow-right} { .arrow-animations-right(); }
-	@{arrow-down} { .arrow-animations-down(); }
+	@{arrow-right} { -webkit-mask-position: -4px -96px !important; }
+	@{arrow-down} { -webkit-mask-position: -20px -96px !important; }
 
 	@{arrow-right},
 	@{arrow-down} {
 		.arrow-styles;
 	}
 }
-
 
 /* ==========================================================================
    Expand/Collapse Sections
@@ -70,10 +69,6 @@
 
 // Drawer Find
 ::shadow #search-results-pane-file-based .parent {
-
-	&::before { .arrow-animations-right(); }
-	&.expanded::before { .arrow-animations-down(); }
-
 	&::before,
 	&.expanded::before {
 		.arrow-styles;
@@ -126,11 +121,13 @@
 	.arrow-styles;
 }
 
-.sort-ascending .sort-order-icon {
+.sort-ascending .sort-order-icon,
+.sort-ascending.sort-order-icon {
 	-webkit-mask-position: -4px -111px !important;
 }
 
-.sort-descending .sort-order-icon {
+.sort-descending .sort-order-icon,
+.sort-descending.sort-order-icon {
 	-webkit-mask-position: -20px -99px !important;
 }
 
@@ -144,4 +141,3 @@
 	}
 
 } // ::shadow
-

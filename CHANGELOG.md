@@ -1,5 +1,87 @@
 # Changelog
 
+## 2.3.3
+* Use correct density icons
+* Clean up glyph hover states
+* Clean up popover styles
+* Remove popover animations
+* Clean up dialog styles
+* Keep syntax highlighting on selected text
+* Fix breakpoint hit style on XHRs
+* Style timeline status indicator
+
+## 2.3.2
+* `canary` fix suggest box
+* `canary` fix console object syntax highlighting
+* `canary` style performance tab warning box
+* `canary` fix filtered list widget
+
+## 2.3.1
+* Fix Network Headers styling
+
+## 2.3.0
+* Bumping stable version to fix tree arrow
+
+## 2.2.9
+* Increase contrast of shadow root nodes
+* Fix colors on security tab
+* Update color of selected text on sources
+* Style new snippet UI
+* Fix tree navigation hover
+* Show timeline grid lines
+* Fix prev/next arrow in sources dark theme
+
+## 2.2.8
+* Fix call stack styles
+* Fix regexp styles in console
+* Fix breakpoint color when stacked over native dark theme
+
+## 2.2.7
+* `canary` Fix navigation arrows
+* `canary` Fix link colors
+
+## 2.2.6
+* Fix autocomplete styles
+* Fix breakpoint styles
+* Style performance column in sources
+* Fix network styles
+
+## 2.2.5
+* Fix history styles
+* Fix syntax highlighting
+* Fix checkbox alignment
+* Style box/text shadow helper
+* Fix websocket frame styles
+
+## 2.2.2
+* Fix css/js styles on sources
+* Fix bubble colors
+
+## 2.2.1
+* Fix toolbar animation
+* Fix toolbar icon position
+* Fix file selected/hover style
+
+## 2.2.0
+`canary` fix a bunch of busted styles
+
+## 2.1.8
+* Style application panel
+* Style breakpoint color
+* Remove leftover toolbar gradients from timeline/profiles panels
+
+## 2.1.7
+* Paint bg white for react extension
+
+## 2.1.6
+* Remove box-shadow from edit states
+* Set sidebar panel default text to theme color
+
+## 2.1.5
+* `canary` Fix font glyph bg color
+* Fix blackbox indicator in sources callstack
+* Fix console panel form colors
+
 ## 2.1.3
 * update style in animation panel
 * add indicator for shadow dom child elements
@@ -92,7 +174,7 @@
 * `canary` Style promise panel
 * `canary` Style new additions to color picker
 * `canary` style optgroup in network throttle dropdown
-* `canary` Style new additions to color picker 
+* `canary` Style new additions to color picker
 * `canary` Fix status bar dropdown arrow position
 * Modify popover background on themes and remove popover-arrow
 * Correct popover arrow positions
@@ -130,11 +212,11 @@
 * `canary` made it pretty again
 
 ## 1.8.3
-* `canary` style timeline selectbox 
-* `canary` fix elements sidebar styles 
+* `canary` style timeline selectbox
+* `canary` fix elements sidebar styles
 * `canary` style scope headers
 * `canary` style revised filter bar
-* `canary` remove background from filter toggle 
+* `canary` remove background from filter toggle
 
 ## 1.8.2
 * `canary` fix styles for console object properties

@@ -64,10 +64,10 @@
 		.help-key-cell {
 
 			.help-key {
-				color: @settings-text !important;
-			}
-			span {
-				color: @settings-delimiter !important;
+				color: @global-text !important;
+				background: @- !important; .contrast(@global-background, 5%);
+			  box-shadow: none !important;
+			  text-shadow: none !important;
 			}
 		}
 
@@ -201,7 +201,8 @@
 
 		.devices-list-edit,
 		.devices-list-remove {
-			-webkit-mask-image: url(chrome-devtools://devtools/bundled/Images/toolbarButtonGlyphs.png) !important;
+			.glyphs("Images/toolbarButtonGlyphs");
+
 			background-color: @global-accent !important;
 			background-image: none !important
 		}
@@ -281,8 +282,9 @@
 
 			.edit-button,
 			.remove-button {
+				.glyphs("Images/toolbarButtonGlyphs");
+
 				background-image: none !important;
-				-webkit-mask-image: url(Images/toolbarButtonGlyphs.png);
 				background-color: @global-accent !important;
 			}
 
@@ -349,7 +351,7 @@
 	// Throttling
 	//==========================================================================
 
-	::shadow ::shadow { 
+	::shadow ::shadow {
 		.conditions {
 			&-list {
 				border: 1px solid @- !important; .contrast(@global-background, 5%);
@@ -381,7 +383,7 @@
 
 			&-list-edit,
 			&-list-remove {
-				-webkit-mask-image: url(chrome-devtools://devtools/bundled/Images/toolbarButtonGlyphs.png) !important;
+				.glyphs("Images/toolbarButtonGlyphs.png");
 				background-color: @global-accent !important;
 				background-image: none !important
 			}
@@ -490,5 +492,5 @@
 // Clean up dialog border (not confident about this selector)
 .vbox.flex-auto {
 	border: none !important;
-	box-shadow: none !important;
+	box-shadow: 0 5px 10px fade(#000, 40%) !important;
 }
