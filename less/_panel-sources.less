@@ -39,11 +39,14 @@
 
 	.breakpoint-entry {
 		color: @global-text !important;
-		border-top: 1px solid @global-divider !important;
 
-		&:not(.breakpoint-hit):hover {
-			background-color: @global-hover !important;
+		&:not(.breakpoint-hit) {
 			border-top: 1px solid @global-divider !important;
+
+			&:hover {
+				background-color: @global-hover !important;
+				border-top: 1px solid @global-divider !important;
+			}
 		}
 
 		.source-text {
@@ -65,6 +68,12 @@
 	.source-text {
 		color: @global-accent !important;
 	}
+}
+
+.breakpoint-hit {
+	background: @selection-background !important;
+	border-top: 1px solid @selection-border !important;
+	border-bottom: 1px solid @selection-border !important;
 }
 
 .sidebar-pane {
@@ -149,25 +158,7 @@ li.breakpoint-hit .breakpoint-hit-marker {
 // Refresh Button (Watch Expressions Header)
 .pane-title-button.add,
 .sidebar-pane-toolbar > .pane-title-button.refresh {
-	/*background-image: none !important;*/
-	-webkit-background-position: -24px 0 !important;
 	background-color: @glyph-inactive !important;
-	-webkit-mask-repeat: no-repeat !important;
-}
-
-// Mask Backgrounds
-.pane-title-button.add {
-	-webkit-mask-image: url(Images/paneAddButtons.png) !important;
-}
-
-.sidebar-pane-toolbar > .pane-title-button.refresh {
-	-webkit-mask-image: url(Images/paneRefreshButtons.png) !important;
-}
-
-.panel.elements .sidebar-pane .sidebar-pane-toolbar > .pane-title-button.element-state,
-.panel.elements .sidebar-pane .sidebar-pane-toolbar > .pane-title-button.animations-controls,
-.panel.elements .sidebar-pane .sidebar-pane-toolbar > .pane-title-button.add {
-	background-image: none !important;
 }
 
 // Elements Panel Buttons
@@ -277,9 +268,6 @@ li.breakpoint-hit .breakpoint-hit-marker {
 
 .sidebar-pane-button-new-rule {
 	background-color: @- !important; .contrast(@global-background, 40%);
-	background-image: none;
-	-webkit-mask-image: url(Images/paneAddButtons.png) !important;
-	-webkit-mask-position: 0 0 !important;
 
 	&:hover {
 		-webkit-mask-position: -23px 0 !important;
@@ -332,11 +320,6 @@ li.breakpoint-hit .breakpoint-hit-marker {
 .watch-expression .primitive-value:hover,
 .watch-expression .section .header:hover {
 	.highlight(hover);
-}
-
-// Selected Text
-body .CodeMirror .CodeMirror-selectedtext:not(.CodeMirror-persist-highlight) {
-	color: @global-text !important;
 }
 
 // ==========================================================================

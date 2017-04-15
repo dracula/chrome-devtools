@@ -150,11 +150,18 @@ body.dock-to-right:not(.undocked):not(.overlay-contents) {
 		text-shadow: none !important;
 	}
 }
+
+// Don't highlight Request Header Tree
+.request-headers-tree::shadow .tree-outline li.selected .selection {
+	background-color: transparent !important;
+	box-shadow: none !important;
+}
 // Context Menu (New settings button and material menus)
 .soft-context-menu {
 	background: @popover-background !important;
 	border: 1px solid @- !important; .contrast(@popover-background, 5%);
 	color: @global-text !important;
+	box-shadow: 0 5px 10px fade(#000, 40%) !important;
 
 	&::shadow {
 		.soft-context-menu-item-mouse-over {
@@ -162,6 +169,7 @@ body.dock-to-right:not(.undocked):not(.overlay-contents) {
 			& { border-top: 1px solid @- !important; .contrast(@popover-background, 10%); }
 			& { border-bottom: 1px solid @- !important; .contrast(@popover-background, 10%); }
 			background-image: none !important;
+			color: @global-text !important;
 		}
 
 		.soft-context-menu-separator > .separator-line {
@@ -169,7 +177,8 @@ body.dock-to-right:not(.undocked):not(.overlay-contents) {
 		}
 
 		.checkmark {
-			-webkit-mask-image: url(chrome-devtools://devtools/bundled/Images/toolbarButtonGlyphs.png);
+			.glyphs("Images/toolbarButtonGlyphs");
+
 			-webkit-mask-position: -128px -109px;
 			-webkit-mask-size: 352px 168px;
 			background-color: @global-accent !important;

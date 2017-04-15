@@ -204,7 +204,16 @@
 	.object-value-function-prefix { color: @js-obj-function !important; }
 }
 
+::shadow {
+	.object-value-function-prefix { color: @js-obj-function !important; }
+}
+
 ::shadow ::shadow .webkit-html-external-link,
 ::shadow ::shadow .webkit-html-resource-link {
+	color: @global-link !important;
+}
+
+.devtools-link,
+::shadow .devtools-link {
 	color: @global-link !important;
 }
