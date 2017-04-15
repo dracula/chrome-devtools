@@ -96,8 +96,9 @@ body.dock-to-right:not(.undocked):not(.overlay-contents) {
 
 // Editing Dom Nodes or Snippet Filenames
 ::shadow ::shadow style + .text-prompt-editing,
-::shadow style + .text-prompt-editing ,
+::shadow .text-prompt-editing ,
 .editing {
+	box-shadow: none !important;
 	background-color: @global-background !important;
 	outline: 1px solid @eh-editing-outline !important;
 	color: @global-text !important;
@@ -105,7 +106,6 @@ body.dock-to-right:not(.undocked):not(.overlay-contents) {
 
 ::shadow .text-prompt-editing > ::content * {
 	color: @global-text !important;
-
 }
 
 // Editing Scope values
@@ -122,26 +122,34 @@ body.dock-to-right:not(.undocked):not(.overlay-contents) {
 	}
 }
 
-// Tables
-// Only found in audits for now
-::shadow .tree-outline li {
-	color: @global-text !important;
-	background-color: @table-primary !important;
-
-	&.odd-row + .children li,
-	&.odd-row {
-		background-color: @table-secondary !important;
-	}
-
-	&.hovered:not(.selected) .selection {
-		.highlight(hover);
-	}
-
-	&.selected .selection {
-		.highlight(selection);
-	}
+// Tree Directories
+.panel-sidebar {
+	background-color: @global-background !important;
 }
 
+::shadow {
+	.tree-outline li {
+		color: @global-text !important;
+		background-color: @table-primary !important;
+
+		&.odd-row + .children li,
+		&.odd-row {
+			background-color: @table-secondary !important;
+		}
+
+		&:hover:not(.selected) .selection {
+			.highlight(hover);
+		}
+
+		&.selected .selection {
+			.highlight(selection);
+		}
+	}
+
+	li.audits-sidebar-results {
+		text-shadow: none !important;
+	}
+}
 // Context Menu (New settings button and material menus)
 .soft-context-menu {
 	background: @popover-background !important;
@@ -207,6 +215,31 @@ body.dock-to-right:not(.undocked):not(.overlay-contents) {
 	}
 }
 
-::shadow ol.children.shadow-root.shadow-root-depth-3.expanded {
-	border-left: 1px dashed @- !important; .contrast(@global-background, 5%);
+::shadow ol.children.shadow-root.expanded {
+	border-left: 1px dashed @- !important; .contrast(@global-background, 10%);
+}
+
+// ==========================================================================
+// Forms
+// ==========================================================================
+body/deep/ input.toolbar-item {
+	.input-styles()
+}
+
+
+// ==========================================================================
+// 3rd Party Extension
+// ==========================================================================
+
+// React - paint bg white
+.widget[class*="React"] {
+	background: #fff !important;
+}
+
+// Remove text shadow from menus
+::shadow .tree-outline {
+	li.security-sidebar-origins,
+	li.profiles-tree-section {
+		text-shadow: none !important;
+	}
 }

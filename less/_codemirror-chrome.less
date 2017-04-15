@@ -33,11 +33,22 @@
 	}
 
 	//Codemirror
-	// Breakpoint Arrow
-	// Since breakpoint uses a border-image that isn't easily replaceable, hardcoding color value for now.
+	// Breakpoint Marker
 	.cm-breakpoint .CodeMirror-gutter-elt {
+		background: @global-accent !important;
+		-webkit-border-image: none !important;
+		border: rgba(0,0,0,0) !important;
 		color: #000 !important;
 		font-weight: 700 !important;
+	}
+
+	// remove invert for dark theme
+	.cm-breakpoint .CodeMirror-gutter-wrapper .CodeMirror-linenumber {
+		-webkit-filter: invert(0) !important;
+	}
+
+	.cm-breakpoint-conditional .CodeMirror-gutter-elt {
+		background: @global-warn !important;
 	}
 
 	// Edit HTML cursor / Sources Edit cursor
@@ -137,4 +148,9 @@
 	background-color: @global-background !important;
 	outline: 1px solid @eh-editing-outline !important;
 	color: @global-text !important;
+}
+
+// Performance Profiling
+.CodeMirror-gutter-performance {
+	background-color: @global-background !important;
 }

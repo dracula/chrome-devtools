@@ -8,9 +8,6 @@
 	color: @global-text;
 }
 
-
-
-
 // ==========================================================================
 //  Syntax For Sources Panel
 // ==========================================================================
@@ -35,10 +32,17 @@
 	.cm-js-operator { color: @js-operator !important;}
 	.cm-js-property { color: @js-property !important; }
 	.cm-js-string { color: @js-string !important; }
-	.cm-js-string-2 { color: @js-string !important; }
+	.cm-js-string-2 { color: @js-obj-regexp !important; }
 	.cm-js-tag { color: @js-tag !important; }
 	.cm-js-variable { color: @js-variable !important; }
 	.cm-js-variable-2 { color: @js-variable-2 !important; }
+
+	// overqualify because devtools authors are using !important
+	.CodeMirror {
+		.cm-js-string { color: @js-string !important; }
+		.cm-js-string-2 { color: @js-obj-regexp !important; }
+		.cm-js-comment { color: @js-comment !important; font-style: italic; }
+	}
 }
 
 .source-frame-eval-expression{ background-color: @selection-background !important; border-color: @selection-border !important;}
@@ -86,6 +90,12 @@
 	.webkit-css-property { color: @css-property !important; }
 	.webkit-css-string { color: @css-string !important; }
 	.webkit-css-url { color: @xml-link !important; }
+
+	// overqualify because devtools authors are using !important
+	.CodeMirror {
+		.cm-css-comment { color: @css-comment !important; font-style: italic; }
+		.cm-css-string { color: @css-string !important;}
+	}
 }
 
 // HTML
@@ -102,15 +112,15 @@
 
 	.webkit-html-attribute-name { color: @xml-attribute !important;}
 	.webkit-html-attribute-value { color: @xml-string !important;}
-	.webkit-html-comment { color: @xml-comment!important;font-style:italic;}
+	.webkit-html-comment { color: @xml-comment !important;font-style:italic;}
 	.webkit-html-resource-link,
-	.webkit-html-external-link { color: @xml-link!important;}
+	.webkit-html-external-link { color: @xml-link !important;}
 	.webkit-html-tag,
 	.webkit-html-tag-name,
-	.webkit-html-close-tag-name { color: @xml-tag!important;}
+	.webkit-html-close-tag-name { color: @xml-tag !important;}
 	.webkit-html-text-node,
 	.webkit-html-css-node,
-	.webkit-html-js-node { color: @xml-js-node!important;}
+	.webkit-html-js-node { color: @xml-js-node !important;}
 	.webkit-html-pseudo-element { color: @xml-pseudo !important;}
 }
 
@@ -167,14 +177,6 @@
 }
 
 
-
-
-
-
-
-
-
-
 .popover .parent + .children.expanded,
 #console-messages .parent + .children.expanded,
 .sidebar-pane .parent:not(.event-category) + .children.expanded {
@@ -183,7 +185,26 @@
 	left: 4.4px;
 }
 
+// Overqualify selector because devtools is using !important
+.monospace,
+.CodeMirror-line {
+	::shadow {
+		.object-value-string { color: @js-obj-string !important; }
+		.object-value-regexp { color: @js-obj-regexp !important; }
+		.object-value-symbol { color: @js-obj-regexp !important; }
+	}
+	.cm-xml-comment { color: @xml-comment !important; }
+	.cm-xml-string { color: @xml-string !important; }
+}
 
+// Console syntax overrides
+#console-messages {
+	.cm-js-string { color: @js-string !important; }
+	.cm-js-string-2 { color: @js-obj-regexp !important; }
+	.object-value-function-prefix { color: @js-obj-function !important; }
+}
 
-
-
+::shadow ::shadow .webkit-html-external-link,
+::shadow ::shadow .webkit-html-resource-link {
+	color: @global-link !important;
+}

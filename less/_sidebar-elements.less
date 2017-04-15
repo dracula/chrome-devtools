@@ -31,6 +31,7 @@
 		color: @style-edit-mode-selector-text !important;
 	}
 
+	::shadow .overloaded,
 	.overloaded,
 	.inactive ,
 	.disabled ,
@@ -40,13 +41,16 @@
 
 }
 
+// editing style properties
+::shadow ::shadow style + .text-prompt-editing ::content .text-prompt {
+	color: @global-text !important;
+}
+
+.styles-section.monospace {
+	color: @style-selector-text !important;
+}
+
 .sidebar-pane {
-
-	.body,
-	.monospace {
-		color: @style-selector-text !important;
-	}
-
 	.section.expanded {
 
 		// Elements -> Event Listeners
@@ -59,29 +63,29 @@
 			background-color: @- !important; .contrast(@global-background, 2%);
 		}
 	}
+}
 
+// Metrics
+// ========================================================================== */
 
-	// Metrics
-	// ========================================================================== */
+.metrics {
+	& { border-top: 1px solid @- !important; .contrast(@global-background, 5%) };
+	& { border-bottom: 1px solid @- !important; .contrast(@global-background, 5%) };
+	margin-top: 5px !important;
+	color: #222;
 
-	.metrics {
-		& { border-top: 1px solid @- !important; .contrast(@global-background, 5%) };
-		& { border-bottom: 1px solid @- !important; .contrast(@global-background, 5%) };
-		margin-top: 5px !important;
+	// Give position bottom border some space to render. Currently a UI bug in native devtools.
+	.position {
+		margin: 0 0 -16px 0 !important;
+	}
 
-		// Give position bottom border some space to render. Currently a UI bug in native devtools.
-		.position {
-			margin: 0 0 -16px 0 !important;
-		}
-
-		.position,
-		.margin:not([style^=background-color]),
-		.border:not([style^=background-color]),
-		.padding:not([style^=background-color]),
-		.margin:not([style^=background-color]),
-		.content:not([style^=background-color]){
-			background-color: #888 !important;
-		}
+	.position,
+	.margin:not([style^=background-color]),
+	.border:not([style^=background-color]),
+	.padding:not([style^=background-color]),
+	.margin:not([style^=background-color]),
+	.content:not([style^=background-color]){
+		background-color: #888 !important;
 	}
 }
 
@@ -300,6 +304,11 @@
 	}
 }
 
+// Icons
+::shadow ::shadow .shadow-swatch-icon {
+	background-color: @global-accent !important;
+}
+
 // ==========================================================================
 // Accessibility Inspection (Experiments)
 // ==========================================================================
@@ -328,4 +337,49 @@ div.ax-computed-name {
 .sidebar-separator > span.monospace {
 	background: transparent !important;
 	border: none !important;
+}
+
+// ==========================================================================
+// Sidebar - Rendered Fonts
+// ==========================================================================
+
+// Fonts section header should be styled the same as .sidebar-separator, but
+// there isn't a good selector hook for it. Attaching to parent class.
+.style-panes-wrapper ::shadow .title {
+	background-color: @style-section !important;
+	color: @style-selector-text !important;
+	text-shadow: none !important;
+	border-top: none !important;
+	border-bottom: none !important;
+}
+
+::shadow .font-stats-item {
+	color: @global-text;
+
+	.font-usage {
+		color: @global-accent;
+	}
+}
+
+// ==========================================================================
+// Shadow Editor
+// ==========================================================================
+::shadow {
+	.shadow-editor-label {
+		color: @global-label !important;
+	}
+
+	.shadow-editor-button-left,
+	.shadow-editor-button-right {
+		.button-styles();
+	}
+
+	.shadow-editor-text-input {
+		.input-styles();
+	}
+}
+
+// slider
+::shadow ::shadow ::shadow #thumb {
+	background-color: @global-accent !important;
 }

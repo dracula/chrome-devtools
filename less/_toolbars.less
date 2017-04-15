@@ -233,12 +233,6 @@ body .inspector-view-toolbar.toolbar::shadow .toolbar-button-theme {
 	background-color: @glyph-inactive !important;
 }
 
-//adjust toolbar glyph positions
-.inspector-view-toolbar-left,
-.inspector-view-toolbar.tabbed-pane-header-after {
-	margin-top: 7px !important;
-}
-
 // Subtoolbars
 .console-view .toolbar,
 .network .toolbar,
@@ -335,10 +329,12 @@ body .inspector-view-toolbar.status-bar::shadow .status-bar-item {
 }
 
 // toolbar labels
+
 .dt-checkbox-text,
-::shadow .dt-checkbox-text,
+body/deep/ .dt-checkbox-text,
 ::content .dt-checkbox-text {
 	color: @global-text !important;
+	margin-bottom: 3px !important;
 }
 
 // Network filter when a filter is applied but options are hidden
@@ -397,6 +393,11 @@ body .inspector-view-toolbar.status-bar::shadow .status-bar-item {
 
 // hover states for toolbar menu icons
 ::shadow ::shadow {
+	button.toolbar-button {
+		border: none !important;
+		background: none !important;
+	}
+
 	.toolbar-button:enabled.hover:not(:active) .toolbar-glyph,
 	.toolbar-button:enabled.hover:not(:active) .toolbar-dropdown-arrow,
 	.toolbar-button.toolbar-state-on .toolbar-glyph,
@@ -411,4 +412,19 @@ body .inspector-view-toolbar.status-bar::shadow .status-bar-item {
 
 ::shadow .toolbar-shadow .toolbar-text {
 	color: @global-label !important;
+}
+
+
+// Application
+::shadow .toolbar-item.checkbox {
+	color: @global-label !important;
+
+	&:hover {
+		color: @global-label !important;
+	}
+}
+
+// Main Tab Navigation - Disable Selected Style and just use animation
+.insertion-point-main::shadow .tabbed-pane-header-tab.selected {
+	border-top-color: transparent !important;
 }
