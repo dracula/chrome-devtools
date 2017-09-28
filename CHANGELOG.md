@@ -1,5 +1,51 @@
 # Changelog
 
+## 2.5.1
+* Element panel fixes
+* Prep for implementation change
+
+## 2.5.0
+* Fix Sidebar Elements Panel
+
+## 2.4.9
+* Minify stylesheets
+
+## 2.4.8
+* Fix console filter selection ui
+* Fix console context selection
+
+## 2.4.1
+* Fix popover styles
+* Fix callstack highlighting
+
+## 2.4.0
+* fix styles on settings panel
+
+## 2.3.9
+* extend element search to full window width
+* fix syntax colors on network tab
+* style cleanup
+
+## 2.3.8
+* `canary` Fix inline breakpoint icon
+
+## 2.3.7
+* Style radio button
+* `canary` Style devtools menu
+* `canary` Style coverage tab
+* `canary` Use blue color for console info messages
+
+## 2.3.6
+* Style paused error state
+* `canary` Style persistence icons
+
+## 2.3.5
+* Style persistence icons
+* Style event listener breakpoint
+*  Fix selection color of html
+* `canary` Style verbose console messages
+* `canary` Fix element editing state
+
 ## 2.3.3
 * Use correct density icons
 * Clean up glyph hover states

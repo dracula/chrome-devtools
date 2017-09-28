@@ -52,7 +52,6 @@
 	}
 
 	// Edit HTML cursor / Sources Edit cursor
-	::shadow .CodeMirror-cursor,
 	.CodeMirror-cursor {
 		border-left: 1px solid @cm-cursor !important;
 	}
@@ -136,17 +135,6 @@
 		outline: 1px solid @selection-border !important;
 	}
 
-	// outline when you hold 'cmd' when on a breakpoint
-	.cm-execution-line-outline {
-		outline: 1px solid @selection-border !important;
-	}
-
-	.CodeMirror .source-frame-continue-to-location,
-	.CodeMirror .source-frame-continue-to-location:hover {
-		background-color: @selection-background  !important;
-		outline: 1px solid @selection-border !important;
-	}
-
 	.CodeMirror-linenumber {border-right: none !important;}
 
 	.cm-line-without-source-mapping {
@@ -154,7 +142,6 @@
 	}
 
 // Editing Dom Nodes or Snippet Filenames
-#-blink-dev-tools ::shadow .editing,
 #-blink-dev-tools .editing {
 	background-color: @global-background !important;
 	outline: 1px solid @eh-editing-outline !important;
@@ -171,6 +158,6 @@
 }
 
 // Selection in edit HTML
-::shadow .CodeMirror-focused .CodeMirror-selected {
+.CodeMirror-focused .CodeMirror-selected {
 	background-color: @cm-selected !important;
 }
