@@ -12,8 +12,13 @@
 	}
 
 	/*-- currently selected element --*/
-	::shadow ::shadow .tree-element-title {
-		color: @selection-text !important;
+	.selected {
+		.base-storage-tree-element-title,
+		.base-storage-tree-element-subtitle,
+		.base-navigator-tree-element-title {
+			color: @selection-text !important;
+			text-shadow: none !important;
+		}
 	}
 
 	.sidebar li {
@@ -70,7 +75,7 @@
 	color: @global-label !important;
 }
 
-::shadow .resource-tree-item.selected .icon,
-::shadow .force-white-icons [is="ui-icon"].spritesheet-largeicons {
+.resource-tree-item.selected .icon,
+.force-white-icons [is="ui-icon"].spritesheet-largeicons {
 	background-color: @global-accent !important;
 }
