@@ -1,0 +1,92 @@
+// ==========================================================================
+// Sources Sidebar
+// ==========================================================================
+
+// section headers - replace when stable
+::shadow .expandable-view-title {
+	&:extend(.sidebar-pane all);
+}
+
+// ==========================================================================
+// Sidebars
+// ==========================================================================
+
+// Darken side panel bg
+.panel-sidebar {
+	background-color: @global-background !important;
+}
+
+// ==========================================================================
+// Nav Arrows
+// ==========================================================================
+
+//Override old method of rendering element nav arrows
+.arrow-styles-canary() {
+	.glyphs("Images/treeoutlineTriangles.png");
+
+	background-color: @global-arrow !important;
+	background-image: none !important;
+	-webkit-mask-repeat: no-repeat !important;
+	color: rgba(0,0,0,0) !important;
+	opacity: 1 !important;
+	-webkit-mask-size: 32px 24px !important;
+}
+
+.arrow-mixin-canary(@arrow-right: ~'li.parent::before', @arrow-down: ~'li.parent.expanded::before') {
+	@{arrow-right} { -webkit-mask-position: 0 0 !important; }
+	@{arrow-down} { -webkit-mask-position: -16px 0 !important; }
+
+	@{arrow-right},
+	@{arrow-down} {
+		.arrow-styles-canary;
+	}
+}
+
+// Element Panel
+.elements-disclosure ol {
+	.arrow-mixin-canary();
+}
+
+// Console
+::shadow .tree-outline {
+	.arrow-mixin-canary(~'li::before', ~'li.expanded::before');
+}
+
+
+// ==========================================================================
+// Syntax
+// ==========================================================================
+#console-messages .link,
+#console-messages .devtools-link {
+	color: @global-text;
+}
+
+// ==========================================================================
+// Network
+// ==========================================================================
+// Network Timing
+.network-timing-table-header td {
+	color: @global-accent !important;
+}
+
+// ==========================================================================
+// Suggest Box
+// ==========================================================================
+::shadow ::shadow div.suggest-box {
+	&:extend(::shadow div.suggest-box all);
+}
+
+// ==========================================================================
+// Performance (Timeline)
+// ==========================================================================
+.timeline-landing-warning {
+	background: @- !important; .contrast(@global-background, 5%);
+	color: @global-text !important;
+}
+
+// ==========================================================================
+// Filtered List Widget
+// ==========================================================================
+::shadow ::shadow .filtered-list-widget {
+	&:extend(::shadow .filtered-list-widget all);
+}
