@@ -1,7 +1,7 @@
 {
 	"name": "Dracula DevTools Theme",
 	"short_name": "😱 A dark theme for Chrome DevTools",
-	"version": "2.0.4",
+	"version": "2.1",
 	"description":
 		"Dracula is a dark theme for Atom, Alfred, Emacs, Highlight.js, iTerm, JetBrains, Pygments, Slack, Sublime Text and many more..",
 	"devtools_page": "devtools.html",
