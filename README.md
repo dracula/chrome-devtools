@@ -1,8 +1,8 @@
-# Update (2017-10-18)
+## Update (2017-10-18)
 
 The fix to continue support for custom devtools themes landed in m62. The new method injects the custom stylesheet into every shadow root that gets rendered. This caused devtools to be super sluggish especially with the shadow piercing combinators. I haven't finished refactoring the styles, but I decided to release it early to address some of the performance and style issues.
 
-### How You Can Help
+## How You Can Help
 
 Please [file issues](https://github.com/mauricecruz/zero-base-themes/issues) for anything that seems broken/unstyled.
 
@@ -10,17 +10,17 @@ I'm trying to prune as much css as possible to improve performance. Haven't figu
 
 If you want to pitch in with the cleanup, feel free to create pull requests.
 
-# Only Supporting Stable Channel (Temporarily)
+## Only Supporting Stable Channel (Temporarily)
 
 The css combinators used to override the devtools CSS is deprecated and support will be removed from Chrome in m63 (~ December 2017). The [Chrome Team will continue to support custom themes](https://bugs.chromium.org/p/chromium/issues/detail?id=709732&can=2&q=709732) by changing the implementation.
 
 The implementation change requires a rewrite of this theme. During this time, only stable channel will be supported.
 
-# Zero Base Themes
+## Zero Base Themes
 
 An assortment of Chrome Devtools themes that use the Zero Base Template.
 
-# Contributing
+## Contributing
 
 Zero Base Themes is built on LESS. Grunt is used to listen for changes to LESS files and generates CSS. This means [Node](http://nodejs.org/) is required.
 
@@ -48,7 +48,7 @@ All template files are located in the `/less` directory. Files beginning with an
 
 Copy `/themes/_theme-template.less` and modify color values accordingly. Rename the file and save in the `/themes` directory. Specify the theme of your choice in `config.less`.
 
-# Alternatives
+## Alternatives
 
 Chrome now has an option to let you select different themes via Settings > Appearance > Theme: Light/Dark.
 
